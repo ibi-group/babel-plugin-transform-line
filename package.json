@@ -74,5 +74,5 @@
         "securityCheck": "nsp check",
         "test": "BABEL_DISABLE_CACHE=1 babel-node --plugins ./babel-plugin-transform-some-other-dynamic-code.js,../js/babel-plugin-transform-line.js ./node_modules/.bin/babel-istanbul test _mocha"
     },
-    "version": "0.0.0"
+    "version": "0.1.0"
 }
