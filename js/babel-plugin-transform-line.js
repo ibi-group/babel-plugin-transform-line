@@ -11,8 +11,8 @@ export default ({
 
                     path.replaceWith(
                         location && location.start.line ?
-                        types.numericLiteral(location.start.line) :
-                        void0Expression
+                            types.numericLiteral(location.start.line) :
+                            void0Expression
                     );
                 }
             }

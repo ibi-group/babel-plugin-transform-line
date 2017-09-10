@@ -4,15 +4,12 @@
         "env": {
             "build": {
                 "presets": [
-                    "babili"
+                    "minify"
                 ]
             }
         },
-        "plugins": [
-            "transform-runtime"
-        ],
         "presets": [
-            "latest"
+            "env"
         ],
         "sourceMaps": "inline"
     },
@@ -21,24 +18,23 @@
         "Duane Sibilly <duane.sibilly@ibigroup.com>"
     ],
     "dependencies": {
-        "babel-runtime": "~6.22.0"
+        "babel-runtime": "~6.26.0"
     },
     "description": "Replaces the identifier __line with the source line number.",
     "devDependencies": {
-        "babel-cli": "~6.22.2",
-        "babel-istanbul": "~0.12.1",
-        "babel-plugin-transform-runtime": "~6.22.0",
-        "babel-preset-babili": "~0.0.10",
-        "babel-preset-latest": "~6.22.0",
-        "chai": "~3.5.0",
-        "eslint": "~3.15.0",
-        "eslint-config-isotropic": "~0.5.0",
-        "mocha": "~3.2.0",
-        "nsp": "~2.6.2"
+        "babel-cli": "~6.26.0",
+        "babel-istanbul": "~0.12.2",
+        "babel-preset-env": "~1.6.0",
+        "babel-preset-minify": "~0.2.0",
+        "chai": "~4.1.2",
+        "eslint": "~4.6.1",
+        "eslint-plugin-isotropic": "~0.0.0",
+        "mocha": "~3.5.1",
+        "nsp": "~2.8.0"
     },
     "engines": {
-        "node": "^6.9.5",
-        "npm": "^4.1.2"
+        "node": "^8.4.0",
+        "npm": "^5.4.1"
     },
     "eslintConfig": {
         "env": {
@@ -46,7 +42,7 @@
             "es6": true,
             "node": true
         },
-        "extends": "isotropic",
+        "extends": "plugin:isotropic/isotropic",
         "parserOptions": {
             "ecmaFeatures": {
                 "experimentalObjectRestSpread": true,
@@ -57,6 +53,9 @@
             "ecmaVersion": 2017,
             "sourceType": "module"
         },
+        "plugins": [
+            "isotropic"
+        ],
         "root": true
     },
     "homepage": "https://github.com/ibi-group/babel-plugin-transform-line",
