@@ -1,19 +1,13 @@
-import {
-    describe,
-    it
-} from 'mocha';
+import _chai from 'chai';
+import _mocha from 'mocha';
 
-import {
-    expect
-} from 'chai';
-
-describe('__line', () => {
-    it('should represent the current line number', () => {
-        expect(__line).to.equal(12);
+_mocha.describe('__line', () => {
+    _mocha.it('should represent the current line number', () => {
+        _chai.expect(__line).to.equal(6);
     });
 
-    it('should be undefined when it doesn\'t exist in the original source', () => {
+    _mocha.it('should be undefined when it doesn\'t exist in the original source', () => {
         /* global __someOtherDynamicCode */
-        expect(__someOtherDynamicCode).to.be.undefined;
+        _chai.expect(__someOtherDynamicCode).to.be.undefined;
     });
 });
