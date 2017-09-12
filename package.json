@@ -28,7 +28,7 @@
         "babel-preset-minify": "~0.2.0",
         "chai": "~4.1.2",
         "eslint": "~4.6.1",
-        "eslint-plugin-isotropic": "~0.0.0",
+        "eslint-plugin-isotropic": "~0.1.0",
         "mocha": "~3.5.1",
         "nsp": "~2.8.0"
     },
@@ -73,5 +73,5 @@
         "securityCheck": "nsp check",
         "test": "BABEL_DISABLE_CACHE=1 babel-node --plugins ./babel-plugin-transform-some-other-dynamic-code.js,../js/babel-plugin-transform-line.js ./node_modules/.bin/babel-istanbul test _mocha"
     },
-    "version": "0.3.0"
+    "version": "0.4.0"
 }
