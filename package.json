@@ -1,15 +1,19 @@
 {
     "author": "Steven Olmsted <steven.olmsted@ibigroup.com>",
     "babel": {
-        "env": {
-            "build": {
-                "presets": [
-                    "minify"
-                ]
-            }
-        },
+        "plugins": [
+            "./js/babel-plugin-transform-line.js",
+            "./test/babel-plugin-transform-some-other-dynamic-code.js"
+        ],
         "presets": [
-            "env"
+            [
+                "@babel/preset-env",
+                {
+                    "targets": {
+                        "node": "current"
+                    }
+                }
+            ]
         ],
         "sourceMaps": "inline"
     },
@@ -17,24 +21,21 @@
     "contributors": [
         "Duane Sibilly <duane.sibilly@ibigroup.com>"
     ],
-    "dependencies": {
-        "babel-runtime": "~6.26.0"
-    },
     "description": "Replaces the identifier __line with the source line number.",
     "devDependencies": {
-        "babel-cli": "~6.26.0",
-        "babel-istanbul": "~0.12.2",
-        "babel-preset-env": "~1.6.0",
-        "babel-preset-minify": "~0.2.0",
-        "chai": "~4.1.2",
-        "eslint": "~4.6.1",
-        "eslint-plugin-isotropic": "~0.1.0",
-        "mocha": "~3.5.1",
-        "nsp": "~2.8.0"
+        "@babel/core": "~7.1.6",
+        "@babel/preset-env": "~7.1.6",
+        "@babel/register": "~7.0.0",
+        "chai": "~4.2.0",
+        "cross-env": "~5.2.0",
+        "eslint": "~5.9.0",
+        "eslint-plugin-isotropic": "~0.2.0",
+        "mocha": "~5.2.0",
+        "nyc": "~13.1.0"
     },
     "engines": {
-        "node": "^8.4.0",
-        "npm": "^5.4.1"
+        "node": "^10.13.0",
+        "npm": "^6.4.1"
     },
     "eslintConfig": {
         "env": {
@@ -45,13 +46,12 @@
         "extends": "plugin:isotropic/isotropic",
         "parserOptions": {
             "ecmaFeatures": {
-                "experimentalObjectRestSpread": true,
                 "globalReturn": false,
-                "impliedStrict": true,
+                "impliedStrict": false,
                 "jsx": false
             },
-            "ecmaVersion": 2017,
-            "sourceType": "module"
+            "ecmaVersion": 2018,
+            "sourceType": "script"
         },
         "plugins": [
             "isotropic"
@@ -60,18 +60,32 @@
     },
     "homepage": "https://github.com/ibi-group/babel-plugin-transform-line",
     "license": "BSD-3-Clause",
-    "main": "lib/babel-plugin-transform-line.js",
+    "main": "js/babel-plugin-transform-line.js",
     "name": "babel-plugin-transform-line",
+    "nyc": {
+        "branches": 100,
+        "check-coverage": false,
+        "functions": 100,
+        "instrument": true,
+        "lines": 100,
+        "per-file": false,
+        "reporter": [
+            "lcov",
+            "text-summary"
+        ],
+        "require": [
+            "@babel/register"
+        ],
+        "sourceMap": false,
+        "statements": 100
+    },
     "repository": "ibi-group/babel-plugin-transform-line",
     "scripts": {
-        "build": "BABEL_ENV=build babel js -d lib",
         "lint": "eslint js test",
-        "posttest": "[ -z \"$npm_config_coverage\" ] || babel-istanbul check-coverage --branches 100 --functions 100 --lines 100 --statements 100",
-        "prepare": "npm run build",
-        "prepublishOnly": "npm run securityCheck && npm test --coverage",
+        "posttest": "[ -z \"$npm_config_coverage\" ] || nyc check-coverage",
+        "prepublishOnly": "npm test --coverage",
         "pretest": "npm run lint",
-        "securityCheck": "nsp check",
-        "test": "BABEL_DISABLE_CACHE=1 babel-node --plugins ./babel-plugin-transform-some-other-dynamic-code.js,../js/babel-plugin-transform-line.js ./node_modules/.bin/babel-istanbul test _mocha"
+        "test": "cross-env BABEL_DISABLE_CACHE=1 nyc mocha"
     },
-    "version": "0.4.0"
+    "version": "0.5.0"
 }

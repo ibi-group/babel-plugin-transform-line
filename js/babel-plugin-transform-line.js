@@ -1,4 +1,6 @@
-export default ({
+'use strict';
+
+module.exports = ({
     types
 }) => {
     const void0Expression = types.unaryExpression('void', types.numericLiteral(0), true);
