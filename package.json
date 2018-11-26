@@ -29,7 +29,7 @@
         "chai": "~4.2.0",
         "cross-env": "~5.2.0",
         "eslint": "~5.9.0",
-        "eslint-plugin-isotropic": "~0.1.0",
+        "eslint-plugin-isotropic": "~0.2.0",
         "mocha": "~5.2.0",
         "nyc": "~13.1.0"
     },
@@ -83,9 +83,9 @@
     "scripts": {
         "lint": "eslint js test",
         "posttest": "[ -z \"$npm_config_coverage\" ] || nyc check-coverage",
-        "prepublishOnly": "npm audit && npm test --coverage",
+        "prepublishOnly": "npm test --coverage",
         "pretest": "npm run lint",
         "test": "cross-env BABEL_DISABLE_CACHE=1 nyc mocha"
     },
-    "version": "0.4.0"
+    "version": "0.5.0"
 }
