@@ -87,5 +87,5 @@
         "pretest": "npm run lint",
         "test": "cross-env BABEL_DISABLE_CACHE=1 nyc mocha"
     },
-    "version": "0.5.0"
+    "version": "0.6.0"
 }
