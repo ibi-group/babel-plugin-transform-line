@@ -23,18 +23,18 @@
     ],
     "description": "Replaces the identifier __line with the source line number.",
     "devDependencies": {
-        "@babel/core": "~7.3.3",
-        "@babel/preset-env": "~7.3.1",
-        "@babel/register": "~7.0.0",
+        "@babel/core": "~7.4.4",
+        "@babel/preset-env": "~7.4.4",
+        "@babel/register": "~7.4.4",
         "chai": "~4.2.0",
         "cross-env": "~5.2.0",
-        "eslint": "~5.14.0",
+        "eslint": "~5.16.0",
         "eslint-plugin-isotropic": "~0.2.0",
-        "mocha": "~5.2.0",
-        "nyc": "~13.3.0"
+        "mocha": "~6.1.4",
+        "nyc": "~14.1.0"
     },
     "engines": {
-        "node": "^10.15.1",
+        "node": "^10.15.3",
         "npm": "^6.4.1"
     },
     "eslintConfig": {
@@ -87,5 +87,5 @@
         "pretest": "npm run lint",
         "test": "cross-env BABEL_DISABLE_CACHE=1 nyc mocha"
     },
-    "version": "0.6.0"
+    "version": "0.7.0"
 }
