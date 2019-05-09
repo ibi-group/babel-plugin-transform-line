@@ -29,7 +29,7 @@
         "chai": "~4.2.0",
         "cross-env": "~5.2.0",
         "eslint": "~5.16.0",
-        "eslint-plugin-isotropic": "~0.4.1",
+        "eslint-plugin-isotropic": "~0.4.2",
         "mocha": "~6.1.4",
         "nyc": "~14.1.0"
     },
@@ -87,5 +87,5 @@
         "pretest": "npm run lint",
         "test": "cross-env BABEL_DISABLE_CACHE=1 nyc mocha"
     },
-    "version": "0.7.1"
+    "version": "0.7.2"
 }
