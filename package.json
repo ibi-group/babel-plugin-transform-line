@@ -31,7 +31,7 @@
         "eslint": "~5.16.0",
         "eslint-plugin-isotropic": "~0.4.2",
         "mocha": "~6.1.4",
-        "nyc": "~14.1.0"
+        "nyc": "~14.1.1"
     },
     "engines": {
         "node": "^10.15.3",
@@ -59,6 +59,14 @@
         "root": true
     },
     "homepage": "https://github.com/ibi-group/babel-plugin-transform-line",
+    "keywords": [
+        "babel",
+        "babel plugin",
+        "babel-plugin",
+        "babelplugin",
+        "isotropic",
+        "plugin"
+    ],
     "license": "BSD-3-Clause",
     "main": "js/babel-plugin-transform-line.js",
     "name": "babel-plugin-transform-line",
