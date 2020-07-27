@@ -9,7 +9,10 @@ _mocha.describe('__line', () => {
     });
 
     _mocha.it('should be undefined when it doesn\'t exist in the original source', () => {
-        /* global __someOtherDynamicCode */
+        /* global __someOtherDynamicCode
+        --
+        This is explicitly testing an indentifier which doesn't really exist.
+        */
         _chai.expect(__someOtherDynamicCode).to.be.undefined;
     });
 });
