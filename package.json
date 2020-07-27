@@ -21,25 +21,24 @@
     "contributors": [
         "Duane Sibilly <duane.sibilly@ibigroup.com>"
     ],
-    "description": "Replaces the identifier __line with the source line number.",
+    "description": "Replaces the identifier __line with the source line number",
     "devDependencies": {
-        "@babel/core": "~7.4.4",
-        "@babel/preset-env": "~7.4.4",
-        "@babel/register": "~7.4.4",
+        "@babel/core": "~7.10.5",
+        "@babel/preset-env": "~7.10.4",
+        "@babel/register": "~7.10.5",
         "chai": "~4.2.0",
-        "cross-env": "~5.2.0",
-        "eslint": "~5.16.0",
+        "cross-env": "~7.0.2",
+        "eslint": "~7.5.0",
         "eslint-plugin-isotropic": "~0.5.0",
-        "mocha": "~6.1.4",
-        "nyc": "~14.1.1"
+        "mocha": "~8.0.1",
+        "nyc": "~15.1.0"
     },
     "engines": {
-        "node": "^10.15.3",
-        "npm": "^6.4.1"
+        "node": "^12.18.3",
+        "npm": "^6.14.6"
     },
     "eslintConfig": {
         "env": {
-            "browser": true,
             "es6": true,
             "node": true
         },
@@ -50,7 +49,7 @@
                 "impliedStrict": false,
                 "jsx": false
             },
-            "ecmaVersion": 2018,
+            "ecmaVersion": 2020,
             "sourceType": "script"
         },
         "plugins": [
@@ -58,6 +57,9 @@
         ],
         "root": true
     },
+    "files": [
+        "js/babel-plugin-transform-line.js"
+    ],
     "homepage": "https://github.com/ibi-group/babel-plugin-transform-line",
     "keywords": [
         "babel",
