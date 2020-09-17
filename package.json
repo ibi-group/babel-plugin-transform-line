@@ -43,6 +43,9 @@
             "node": true
         },
         "extends": "plugin:isotropic/isotropic",
+        "globals": {
+            "__fileline": "readonly"
+        },
         "parserOptions": {
             "ecmaFeatures": {
                 "globalReturn": false,

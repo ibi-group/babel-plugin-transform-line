@@ -16,3 +16,9 @@ _mocha.describe('__line', () => {
         _chai.expect(__someOtherDynamicCode).to.be.undefined;
     });
 });
+
+_mocha.describe('__fileline', () => {
+    _mocha.it('should represent the current filepath and line number', () => {
+        _chai.expect(__fileline).to.equal('/test/babel-plugin-transform-line.js:22');
+    });
+});
