@@ -23,39 +23,12 @@
     ],
     "description": "Replaces the identifier __line with the source line number",
     "devDependencies": {
-        "@babel/core": "~7.10.5",
-        "@babel/preset-env": "~7.10.4",
-        "@babel/register": "~7.10.5",
-        "chai": "~4.2.0",
-        "cross-env": "~7.0.2",
-        "eslint": "~7.5.0",
-        "eslint-plugin-isotropic": "~0.6.0",
-        "mocha": "~8.0.1",
-        "nyc": "~15.1.0"
+        "@babel/preset-env": "~7.12.17",
+        "isotropic-dev-dependencies": "0.0.0"
     },
     "engines": {
-        "node": "^12.18.3",
-        "npm": "^6.14.6"
-    },
-    "eslintConfig": {
-        "env": {
-            "es6": true,
-            "node": true
-        },
-        "extends": "plugin:isotropic/isotropic",
-        "parserOptions": {
-            "ecmaFeatures": {
-                "globalReturn": false,
-                "impliedStrict": false,
-                "jsx": false
-            },
-            "ecmaVersion": 2020,
-            "sourceType": "script"
-        },
-        "plugins": [
-            "isotropic"
-        ],
-        "root": true
+        "node": "^14.15.5",
+        "npm": "^7.5.4"
     },
     "files": [
         "js/babel-plugin-transform-line.js"
@@ -72,30 +45,15 @@
     "license": "BSD-3-Clause",
     "main": "js/babel-plugin-transform-line.js",
     "name": "babel-plugin-transform-line",
-    "nyc": {
-        "branches": 100,
-        "check-coverage": false,
-        "functions": 100,
-        "instrument": true,
-        "lines": 100,
-        "per-file": false,
-        "reporter": [
-            "lcov",
-            "text-summary"
-        ],
-        "require": [
-            "@babel/register"
-        ],
-        "sourceMap": false,
-        "statements": 100
-    },
     "repository": "ibi-group/babel-plugin-transform-line",
     "scripts": {
-        "lint": "eslint js test",
-        "posttest": "[ -z \"$npm_config_coverage\" ] || nyc check-coverage",
-        "prepublishOnly": "npm test --coverage",
+        "lint": "eslint -c ./node_modules/isotropic-dev-dependencies/config/eslint-script.json --no-eslintrc --resolve-plugins-relative-to ./node_modules/isotropic-dev-dependencies js test",
+        "postinstall": "husky install ./node_modules/isotropic-dev-dependencies/hooks",
+        "postpublish": "pinst --enable",
+        "posttest": "[ -z \"$npm_config_coverage\" ] || nyc --nycrc-path ./node_modules/isotropic-dev-dependencies/config/nyc.json check-coverage",
+        "prepublishOnly": "npm test --coverage && pinst --disable",
         "pretest": "npm run lint",
-        "test": "cross-env BABEL_DISABLE_CACHE=1 nyc mocha"
+        "test": "cross-env BABEL_DISABLE_CACHE=1 nyc --nycrc-path ./node_modules/isotropic-dev-dependencies/config/nyc.json mocha"
     },
     "version": "0.9.0"
 }

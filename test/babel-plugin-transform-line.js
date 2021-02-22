@@ -1,7 +1,7 @@
 'use strict';
 
-const _chai = require('chai'),
-    _mocha = require('mocha');
+const _chai = require('isotropic-dev-dependencies/lib/chai.js').default,
+    _mocha = require('isotropic-dev-dependencies/lib/mocha.js').default;
 
 _mocha.describe('__line', () => {
     _mocha.it('should represent the current line number', () => {
