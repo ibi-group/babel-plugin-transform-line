@@ -27,8 +27,8 @@
         "isotropic-dev-dependencies": "~0.1.0"
     },
     "engines": {
-        "node": "^14.15.5",
-        "npm": "^7.5.4"
+        "node": ">=14.15.5",
+        "npm": ">=7.5.4"
     },
     "files": [
         "js/babel-plugin-transform-line.js"
@@ -55,5 +55,5 @@
         "pretest": "npm run lint",
         "test": "cross-env BABEL_DISABLE_CACHE=1 nyc --nycrc-path ./node_modules/isotropic-dev-dependencies/config/nyc.json mocha"
     },
-    "version": "0.10.0"
+    "version": "0.10.1"
 }
