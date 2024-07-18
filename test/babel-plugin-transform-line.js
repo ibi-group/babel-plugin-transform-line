@@ -1,14 +1,15 @@
+/* global describe, it -- mocha's bdd interface is global */
+
 'use strict';
 
-const _chai = require('isotropic-dev-dependencies/lib/chai.js').default,
-    _mocha = require('isotropic-dev-dependencies/lib/mocha.js').default;
+const _chai = require('chai');
 
-_mocha.describe('__line', () => {
-    _mocha.it('should represent the current line number', () => {
-        _chai.expect(__line).to.equal(8);
+describe('__line', () => {
+    it('should represent the current line number', () => {
+        _chai.expect(__line).to.equal(9);
     });
 
-    _mocha.it('should be undefined when it doesn\'t exist in the original source', () => {
+    it('should be undefined when it doesn\'t exist in the original source', () => {
         /* global __someOtherDynamicCode
         --
         This is explicitly testing an indentifier which doesn't really exist.
