@@ -20,7 +20,7 @@
     "bugs": "https://github.com/ibi-group/babel-plugin-transform-line/issues",
     "description": "Replaces the identifier __line with the source line number",
     "devDependencies": {
-        "@babel/preset-env": "~7.24.7",
+        "@babel/preset-env": "~7.25.2",
         "@babel/register": "~7.24.6",
         "chai": "~4.4.1",
         "isotropic-dev-dependencies": "~0.1.0",
