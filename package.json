@@ -18,17 +18,17 @@
         "sourceMaps": "inline"
     },
     "bugs": "https://github.com/ibi-group/babel-plugin-transform-line/issues",
-    "contributors": [
-        "Duane Sibilly <duane.sibilly@ibigroup.com>"
-    ],
     "description": "Replaces the identifier __line with the source line number",
     "devDependencies": {
-        "@babel/preset-env": "~7.12.17",
-        "isotropic-dev-dependencies": "~0.1.0"
+        "@babel/preset-env": "~7.25.2",
+        "@babel/register": "~7.24.6",
+        "chai": "~4.4.1",
+        "isotropic-dev-dependencies": "~0.3.0",
+        "nyc": "~17.0.0"
     },
     "engines": {
-        "node": "^14.15.5",
-        "npm": "^7.5.4"
+        "node": "^22.5.1",
+        "npm": "^10.8.2"
     },
     "files": [
         "js/babel-plugin-transform-line.js"
@@ -45,15 +45,13 @@
     "license": "BSD-3-Clause",
     "main": "js/babel-plugin-transform-line.js",
     "name": "babel-plugin-transform-line",
-    "repository": "ibi-group/babel-plugin-transform-line",
+    "repository": "github:ibi-group/babel-plugin-transform-line",
     "scripts": {
-        "lint": "eslint -c ./node_modules/isotropic-dev-dependencies/config/eslint-script.json --no-eslintrc --resolve-plugins-relative-to ./node_modules/isotropic-dev-dependencies js test",
-        "postinstall": "husky install ./node_modules/isotropic-dev-dependencies/hooks",
-        "postpublish": "pinst --enable",
-        "posttest": "[ -z \"$npm_config_coverage\" ] || nyc --nycrc-path ./node_modules/isotropic-dev-dependencies/config/nyc.json check-coverage",
-        "prepublishOnly": "npm test --coverage && pinst --disable",
+        "lint": "eslint js test",
+        "prepublishOnly": "npm test --coverage",
         "pretest": "npm run lint",
-        "test": "cross-env BABEL_DISABLE_CACHE=1 nyc --nycrc-path ./node_modules/isotropic-dev-dependencies/config/nyc.json mocha"
+        "test": "cross-env BABEL_DISABLE_CACHE=1 nyc --require @babel/register -s mocha"
     },
-    "version": "0.10.0"
+    "type": "commonjs",
+    "version": "0.11.0"
 }
