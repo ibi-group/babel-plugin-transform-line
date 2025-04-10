@@ -24,7 +24,7 @@
         "@babel/register": "~7.24.6",
         "chai": "~4.4.1",
         "eslint": "~9.8.0",
-        "isotropic-dev-dependencies": "~0.3.0",
+        "isotropic-dev-dependencies": "~0.3.1",
         "nyc": "~17.0.0"
     },
     "engines": {
@@ -54,5 +54,5 @@
         "test": "cross-env BABEL_DISABLE_CACHE=1 nyc --require @babel/register -s mocha"
     },
     "type": "commonjs",
-    "version": "0.11.0"
+    "version": "0.11.1"
 }
